@@ -13,4 +13,4 @@ Content-Type: application/json
 }
 
 ###GET:
-GET http://localhost:3001/api/books
+GET http://localhost:3001/api/books/
