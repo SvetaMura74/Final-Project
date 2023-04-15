@@ -1,0 +1,16 @@
+###POST to add a book:
+POST http://localhost:3001/api/books
+Content-Type: application/json
+
+{
+    "book_id": "58283080",
+    "position": "1",
+    "name": "Hook, Line, and Sinker (Bellinger Sisters, #2)",
+    "cover":
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1627068858i/58283080.jpg",
+    "rating": 4.12,
+    "url": "https://www.goodreads.com/book/show/58283080-hook-line-and-sinker"
+}
+
+###GET:
+GET http://localhost:3001/api/books
