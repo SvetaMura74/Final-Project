@@ -17,7 +17,7 @@ router.post("/", (req, res) => {
   book
     .save()
     .then((saved) => {
-      res.json({ message: "Successfully saved" });
+      res.json({ message: "Book Successfully saved" });
     })
     .catch((e) => {
       res.status(500).json({ message: `Error: ${e}` });

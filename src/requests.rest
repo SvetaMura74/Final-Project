@@ -12,5 +12,18 @@ Content-Type: application/json
     "url": "https://www.goodreads.com/book/show/58283080-hook-line-and-sinker"
 }
 
-###GET:
+###GET all books:
 GET http://localhost:3001/api/books/
+
+###POST to add a user:
+POST http://localhost:3001/api/users/
+Content-Type: application/json
+
+{
+  "firstName":"Svetlana",
+  "lastName":"Muratov",
+  "email":"sveta111@gmail.com"
+}
+
+###GET all users:
+GET http://localhost:3001/api/users
