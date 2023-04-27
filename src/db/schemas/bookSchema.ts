@@ -4,8 +4,10 @@ const bookSchema = new Schema({
   book_id: String,
   position: String,
   name: String,
+  author:String,
   cover: String,
   rating: Number,
-  url: String,
+  description: String,
+  genres:String
 });
 export {bookSchema};
