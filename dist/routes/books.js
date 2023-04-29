@@ -2,9 +2,9 @@
 //mini express application
 import { Router } from "express";
 import { BookModel } from "../db/models/books.model.js";
-const router = Router();
 import _ from 'underscore';
 import { bSchema } from "../validators/book_validator.js";
+const router = Router();
 //////////////////////////
 router.post("/", (req, res) => {
     const body = _.pick(req.body, "book_id", "position", "name", "author", "cover", "rating", "description", "genres");

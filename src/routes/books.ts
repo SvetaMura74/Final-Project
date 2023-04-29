@@ -2,9 +2,10 @@
 //mini express application
 import { Router } from "express";
 import { BookModel } from "../db/models/books.model.js";
-const router = Router();
 import _ from 'underscore'
 import { bSchema } from "../validators/book_validator.js";
+
+const router = Router();
 
 //////////////////////////
 

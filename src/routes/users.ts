@@ -1,9 +1,9 @@
 import { Router } from "express";
 import { UserModel } from "../db/models/users.model.js";
-
-const router = Router();
 import _ from "underscore";
 import { uSchema } from "../validators/user_validator.js";
+
+const router = Router();
 
 router.post("/", async (req, res) => {
   const body = _.pick(req.body, "firstName","lastName","email");

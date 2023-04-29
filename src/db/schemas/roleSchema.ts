@@ -3,4 +3,4 @@ const roleSchema=new Schema({
     name:String
 })
 
-export {roleSchema}
+export {roleSchema};
