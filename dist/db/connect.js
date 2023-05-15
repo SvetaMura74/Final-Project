@@ -16,9 +16,9 @@ const connect = () => __awaiter(void 0, void 0, void 0, function* () {
     mongoose.set("strictQuery", false);
     yield mongoose.connect(`mongodb://${HOST}:${PORT}/${DB}`);
     console.log(`Succesfully connected to the database ${DB}`);
-    initDB2();
+    initDB();
 });
-const initDB2 = () => __awaiter(void 0, void 0, void 0, function* () {
+const initDB = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const count = yield RoleModel.estimatedDocumentCount();
         if (count === 0) {

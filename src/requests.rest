@@ -19,14 +19,15 @@ Content-Type: application/json
 GET http://localhost:3001/api/books/
 
 ###POST to add a user:
-POST http://localhost:3001/api/users/
+POST http://localhost:3001/api/auth/signup
 Content-Type: application/json
 
 {
-  "firstName":"Svetlana",
-  "lastName":"Muratov",
-  "email":"sveta111@gmail.com"
+  "firstName":"Svet",
+  "lastName":"Murat",
+  "email":"sveta331@gmail.com",
+  "password":"Sorokvo@1974"
 }
 
 ###GET all users:
-GET http://localhost:3001/api/users
+GET http://localhost:3001/api/auth/

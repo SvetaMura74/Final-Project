@@ -1,12 +1,8 @@
-const urlRegex = new RegExp(
-  
-    "^https?://(?:[a-z0-9-]+.)+[a-z]{2,6}(?:/[^/#?]+)+.(?:jpe?g|gif|png|bmp)$"
-  
-);
+const urlRegex =/^https?:\/\/(?:www.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9].[^s]{2,}|www.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9].[^s]{2,}|https?:\/\/(?:www.|(?!www))[a-zA-Z0-9]+.[^s]{2,}|www.[a-zA-Z0-9]+.[^s]{2,}$/;
 
-const emailRegex = new RegExp(
-  "^[a-zA-Z0-9_.+]+(?<!^[0-9])@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$"
-);
+const passwordRegex =
+  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,30}$/;
+ 
 
-export { urlRegex,
-        emailRegex };
+
+export { urlRegex ,passwordRegex};

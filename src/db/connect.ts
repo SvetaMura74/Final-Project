@@ -7,15 +7,14 @@ const connect = async () => {
   mongoose.set("strictQuery", false);
   await mongoose.connect(`mongodb://${HOST}:${PORT}/${DB}`);
   console.log(`Succesfully connected to the database ${DB}`);
-  initDB2();
+
+  initDB();
 };
-const initDB2 = async () => {
+const initDB = async () => {
   try {
     const count = await RoleModel.estimatedDocumentCount();
     if (count === 0) {
       const roles = ROLES.map((r) => new RoleModel({ name: r }));
-
-     
       for (let role of roles) {
         await role.save();
         console.log("added ", role.name, "to Roles collection");
