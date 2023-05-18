@@ -26,7 +26,16 @@ Content-Type: application/json
   "firstName":"Svet",
   "lastName":"Murat",
   "userName":"SvMur",
-  "email":"sveta31@gmail.com",
+  "email":"svet31@gmail.com",
+  "password":"Sorokvo@1974"
+}
+###POST to sign in:
+POST http://localhost:3001/api/auth/signin
+Content-Type: application/json
+
+{
+ 
+  "email":"svet31@gmail.com",
   "password":"Sorokvo@1974"
 }
 

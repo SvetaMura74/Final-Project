@@ -8,5 +8,10 @@ const userSignupSchema = joi.object({
   email: joi.string().email().required(),
   password: joi.string().regex(passwordRegex).required(),
 });
+const userSigninSchema = joi.object({
 
-export { userSignupSchema };
+  email: joi.string().email().required(),
+  password: joi.string().regex(passwordRegex).required(),
+});
+
+export { userSignupSchema ,userSigninSchema};
