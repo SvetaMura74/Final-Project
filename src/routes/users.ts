@@ -5,6 +5,7 @@ import { validateSignUp } from "../middleware/verifySignupBody.js";
 import { userExists } from "../middleware/userExistsAlready.js";
 import bcrypt from "bcryptjs";
 import { validateSignIn } from "../middleware/verifySigninBody.js";
+import { RoleModel } from "../db/models/roles.model.js";
 
 const router = Router();
 
@@ -18,8 +19,10 @@ router.post("/signup", validateSignUp, userExists, async (req, res) => {
     "password"
   );
   body.password = await bcrypt.hash(body.password, 12);
+  const user= new UserModel(body);
   try {
-    const user = await new UserModel(body).save();
+    user.roles=[await (await RoleModel.findOne({name:'user'}))._id]
+    await user.save();
     return res.json({ message: "User is Saved", id: user._id });
   } catch (e) {
     return res.status(500).json({ message: " Server DB Error", error: e });
