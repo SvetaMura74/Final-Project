@@ -8,7 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import mongoose from "mongoose";
-import dbConfig from "./config/db.config.js";
+import dbConfig from "../config/db.config.js";
 import { RoleModel } from "./models/roles.model.js";
 const { HOST, DB, PORT, ROLES } = dbConfig;
 const connect = () => __awaiter(void 0, void 0, void 0, function* () {

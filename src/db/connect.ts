@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import dbConfig from "./config/db.config.js";
+import dbConfig from "../config/db.config.js";
 import { RoleModel } from "./models/roles.model.js";
 const { HOST, DB, PORT, ROLES } = dbConfig;
 const connect = async () => {
