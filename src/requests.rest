@@ -1,6 +1,7 @@
 ###POST to add a book:
 POST http://localhost:3001/api/books
 Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NmRjODJkYWNjNmQ5OTRlMjgwNzAxYSIsImlhdCI6MTY4NTE3MTIwNiwiZXhwIjoxNjg3NzYzMjA2fQ.lJ-jy1UAB1mRcwC5G724QqCnyE3jEprccv0V0gIQYfU
 
 {
    "book_id": "58283080",
@@ -14,9 +15,34 @@ Content-Type: application/json
       "King crab fisherman Fox Thornton has a reputation as a sexy, carefree flirt. Everyone knows he's a guaranteed good time--in bed and out--and that's exactly how he prefers it. Until he meets Hannah Bellinger. She's immune to his charm and looks, but she seems to enjoy his... personality? And wants to be friends? Bizarre. But he likes her too much to risk a fling, so platonic pals it is.Now, Hannah's in town for work, crashing in Fox's spare bedroom. She knows he's a notorious ladies' man, but they're definitely just friends. In fact, she's nursing a hopeless crush on a colleague and Fox is just the person to help with her lackluster love life. Armed with a few tips from Westport's resident Casanova, Hannah sets out to catch her coworker's eye... yet the more time she spends with Fox, the more she wants him instead. As the line between friendship and flirtation begins to blur, Hannah can't deny she loves everything about Fox, but she refuses to be another notch on his bedpost.Living with his best friend should have been easy. Except now she's walking around in a towel, sleeping right across the hall, and Fox is fantasizing about waking up next to her for the rest of his life and... and... man overboard! He's fallen for her, hook, line, and sinker. Helping her flirt with another guy is pure torture, but maybe if Fox can tackle his inner demons and show Hannah he's all in, she'll choose him instead?In the follow-up to It Happened One Summer, Tessa Bailey delivers another deliciously fun rom-com about a former player who accidentally falls for his best friend while trying to help her land a different man...",
     "genres": "Romance,Contemporary"
 }
+###POST to add a book:
+POST http://localhost:3001/api/books
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NmRjODJkYWNjNmQ5OTRlMjgwNzAxYSIsImlhdCI6MTY4NTE4ODIzOCwiZXhwIjoxNjg3NzgwMjM4fQ.IQfv6GQYJjNlpL7d34Na7qOD_F30AU4Y3rjvQEznfgI
+
+
+{
+   "book_id": "53",
+   "position": "1",
+    "name": "Hogghj",
+    "author": "Tgg",
+    "cover":
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1627068858i/58283080.jpg",
+    "rating": 4.12,
+    "description":
+      "fghjgghhjjj",
+    "genres": "Romance,Contemporary"
+
+}
 
 ###GET all books:
 GET http://localhost:3001/api/books/
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NmJiMThmMTY4YjQ5Y2QxNTlkZmVmNiIsImlhdCI6MTY4NTE4NjYxOSwiZXhwIjoxNjg3Nzc4NjE5fQ.B94stEpy_cSkqSdFYLh8C1GAH-hEAZmT9rR-mATglqw
+
+###GET all books as modarator:
+GET http://localhost:3001/api/books/mod
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NmRjODJkYWNjNmQ5OTRlMjgwNzAxYSIsImlhdCI6MTY4NTE3MTAxNywiZXhwIjoxNjg3NzYzMDE3fQ.80WFvWqEy08_aTX1vbzJTsvPgINLkg_O4woSdr1lYHg
+
 
 ###POST to add a user:
 POST http://localhost:3001/api/auth/signup
@@ -48,7 +74,7 @@ Content-Type: application/json
   "email":"svet31@gmail.com",
   "password":"Sorokvo@1974"
 }
-###POST to sign in as admin:
+###POST to sign in as admin/mod:
 POST http://localhost:3001/api/auth/signin
 Content-Type: application/json
 

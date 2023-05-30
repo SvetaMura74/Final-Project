@@ -23,7 +23,7 @@ router.post("/signup", validateSignUp, userExists, async (req, res) => {
   body.password = await bcrypt.hash(body.password, 12);
   const user = new UserModel(body);
   try {
-    user.roles = [await (await RoleModel.findOne({ name: "user" }))._id];
+   user.roles = [await(await RoleModel.findOne({ name: "user" }))._id];
     await user.save();
     return res.json({ message: "User is Saved", id: user._id });
   } catch (e) {
