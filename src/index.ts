@@ -9,7 +9,12 @@ import cors from "cors";
 const app = express();
 connect().catch((e) => console.log(e));
 
-app.use(cors({ origin: "http://localhost:3000" }));
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
 app.use(express.json());
 //logger
 app.use(morgan("dev"));

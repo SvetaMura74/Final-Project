@@ -37,7 +37,8 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NmRjODJkYWNjNmQ5
 
 ###GET all books:
 GET http://localhost:3001/api/books/
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NmJiMThmMTY4YjQ5Y2QxNTlkZmVmNiIsImlhdCI6MTY4NTE4NjYxOSwiZXhwIjoxNjg3Nzc4NjE5fQ.B94stEpy_cSkqSdFYLh8C1GAH-hEAZmT9rR-mATglqw
+Content-Type: application/json
+
 
 ###GET all books as modarator:
 GET http://localhost:3001/api/books/mod

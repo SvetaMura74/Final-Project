@@ -26,7 +26,7 @@ router.post("/", validateBookDetails, bookExists, validateToken, isAdmin, (req, 
         return res.status(500).json({ message: `Error: ${e}` });
     }
 }));
-router.get("/", validateToken, (req, res) => {
+router.get("/", (req, res) => {
     BookModel.find()
         .then((result) => {
         res.json(result);

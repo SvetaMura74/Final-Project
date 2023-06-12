@@ -38,7 +38,7 @@ router.post(
   }
 );
 
-router.get("/", validateToken, (req, res) => {
+router.get("/",  (req, res) => {
   BookModel.find()
     .then((result) => {
       res.json(result);
