@@ -12,8 +12,8 @@ router.post(
   "/",
   validateBookDetails,
   bookExists,
-  validateToken,
-  isAdmin,
+ /*  validateToken, */
+  /* isAdmin, */
 
   async (req, res) => {
     const body = _.pick(

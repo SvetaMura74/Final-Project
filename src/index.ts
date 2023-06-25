@@ -19,7 +19,7 @@ app.use(express.json());
 //logger
 app.use(morgan("dev"));
 //routes:
-app.use("/api/books", booksRouter); //add /api/books before booksRouter
+app.use("/api/books", booksRouter); 
 app.use("/api/auth", usersRouter);
 
 //404

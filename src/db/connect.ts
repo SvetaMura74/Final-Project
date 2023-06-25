@@ -1,6 +1,8 @@
 import mongoose from "mongoose";
 import dbConfig from "../config/db.config.js";
 import { RoleModel } from "./models/roles.model.js";
+import { BookModel } from "./models/books.model.js";
+import { bookList } from "../mock-data/book_list.js";
 const { HOST, DB, PORT, ROLES } = dbConfig;
 const connect = async () => {
   //mongoose 7 update:
@@ -20,6 +22,7 @@ const initDB = async () => {
         console.log("added ", role.name, "to Roles collection");
       }
     }
+ 
   } catch (e) {
     console.log("Failed with error: ", e);
   }
