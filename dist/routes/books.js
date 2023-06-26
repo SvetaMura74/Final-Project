@@ -10,13 +10,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import { Router } from "express";
 import { BookModel } from "../db/models/books.model.js";
 import _ from "underscore";
+import { validateToken } from "../middleware/validateToken.js";
+import { isAdmin } from "../middleware/isAdmin.js";
 import { validateBookDetails } from "../middleware/verifyBookDetails.js";
 import { bookExists } from "../middleware/bookExists.js";
 const router = Router();
-router.post("/", validateBookDetails, bookExists, 
-/*  validateToken, */
-/* isAdmin, */
-(req, res) => __awaiter(void 0, void 0, void 0, function* () {
+router.post("/", validateBookDetails, bookExists, validateToken, isAdmin, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const body = _.pick(req.body, "book_id", "position", "name", "author", "cover", "rating", "description", "genres");
     const book = new BookModel(body);
     try {
