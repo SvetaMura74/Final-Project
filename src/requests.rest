@@ -50,10 +50,10 @@ POST http://localhost:3001/api/auth/signup
 Content-Type: application/json
 
 {
-  "firstName":"Svet",
-  "lastName":"Murat",
-  "userName":"SvMur",
-  "email":"svet31@gmail.com",
+  "firstName":"Sveta",
+  "lastName":"Murata",
+  "userName":"SvMura",
+  "email":"sveta31@gmail.com",
   "password":"Sorokvo@1974"
 }
 ###POST to add a user with the role of admin:
