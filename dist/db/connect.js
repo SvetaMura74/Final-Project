@@ -34,4 +34,3 @@ const initDB = () => __awaiter(void 0, void 0, void 0, function* () {
     }
 });
 export { connect };
-//
