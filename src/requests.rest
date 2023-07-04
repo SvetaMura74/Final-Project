@@ -86,3 +86,13 @@ Content-Type: application/json
 
 ###GET all users:
 GET http://localhost:3001/api/auth/
+
+###DELETE a book:
+DELETE  http://localhost:3001/api/books/:book_id
+Content-Type: application/json
+
+{
+  "book_id":"67676767"
+}
+
+

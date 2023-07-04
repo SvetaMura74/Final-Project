@@ -35,5 +35,16 @@ router.get("/", (req, res) => {
         res.status(500).json({ message: `Error: ${e}` });
     });
 });
-// router.delete('/books', (req, res)=>{})
+router.delete('/:book_id', (req, res) => {
+    BookModel.deleteOne({ "book_id": req.params.book_id })
+        .then(() => {
+        res.status(200).json({
+            message: 'Deleted!'
+        });
+    }).catch((error) => {
+        res.status(400).json({
+            error: error
+        });
+    });
+});
 export { router as booksRouter };
