@@ -35,16 +35,19 @@ router.get("/", (req, res) => {
         res.status(500).json({ message: `Error: ${e}` });
     });
 });
-router.delete('/:book_id', (req, res) => {
-    BookModel.deleteOne({ "book_id": req.params.book_id })
-        .then(() => {
+router.delete('/:book_id', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const bookId = req.params.book_id;
+        const result = yield BookModel.deleteOne({ book_id: bookId });
         res.status(200).json({
-            message: 'Deleted!'
+            message: "Deleted!", deletedCount: result.deletedCount
         });
-    }).catch((error) => {
+    }
+    catch (e) {
         res.status(400).json({
-            error: error
+            message: "Something went wrong"
         });
-    });
-});
+    }
+    ;
+}));
 export { router as booksRouter };

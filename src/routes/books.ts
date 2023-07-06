@@ -47,21 +47,21 @@ router.get("/",  (req, res) => {
     });
 });
 
- router.delete('/:book_id', (req, res)=>{
-  BookModel.deleteOne({"book_id":req.params.book_id})
-    .then(
-    () => {
-      res.status(200).json({
-        message: 'Deleted!'
+ router.delete('/:book_id', async(req, res)=>{
+  try {
+  const bookId=req.params.book_id;
+  const result=await BookModel.deleteOne({ book_id: bookId })
+    
+ res.status(200).json({
+        message: "Deleted!",deletedCount:result.deletedCount
       });
-    }
-  ).catch(
-    (error) => {
+ 
+    
+  } catch(e){
       res.status(400).json({
-        error: error
+        message:"Something went wrong" 
       });
-    }
-  );
+    };
 });
 
 
