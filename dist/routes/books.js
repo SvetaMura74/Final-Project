@@ -26,6 +26,12 @@ router.post("/", validateBookDetails, bookExists, validateToken, isAdmin, (req, 
         return res.status(500).json({ message: `Error: ${e}` });
     }
 }));
+router.put("/:book_id", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const bookId = req.params.book_id;
+    const result = yield BookModel.replaceOne({ book_id: bookId }, req.body);
+    console.log(result);
+    res.json({ updatedCount: result.modifiedCount });
+}));
 router.get("/", (req, res) => {
     BookModel.find()
         .then((result) => {
@@ -35,19 +41,19 @@ router.get("/", (req, res) => {
         res.status(500).json({ message: `Error: ${e}` });
     });
 });
-router.delete('/:book_id', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+router.delete("/:book_id", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const bookId = req.params.book_id;
         const result = yield BookModel.deleteOne({ book_id: bookId });
         res.status(200).json({
-            message: "Deleted!", deletedCount: result.deletedCount
+            message: "Deleted!",
+            deletedCount: result.deletedCount,
         });
     }
     catch (e) {
         res.status(400).json({
-            message: "Something went wrong"
+            message: "Something went wrong",
         });
     }
-    ;
 }));
 export { router as booksRouter };

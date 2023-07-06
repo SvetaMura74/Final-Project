@@ -36,8 +36,14 @@ router.post(
     }
   }
 );
+router.put("/:book_id", async (req, res) => {
+  const bookId = req.params.book_id;
+  const result = await BookModel.replaceOne({ book_id: bookId }, req.body);
+  console.log(result);
+  res.json({ updatedCount: result.modifiedCount });
+});
 
-router.get("/",  (req, res) => {
+router.get("/", (req, res) => {
   BookModel.find()
     .then((result) => {
       res.json(result);
@@ -47,24 +53,20 @@ router.get("/",  (req, res) => {
     });
 });
 
- router.delete('/:book_id', async(req, res)=>{
+router.delete("/:book_id", async (req, res) => {
   try {
-  const bookId=req.params.book_id;
-  const result=await BookModel.deleteOne({ book_id: bookId })
-    
- res.status(200).json({
-        message: "Deleted!",deletedCount:result.deletedCount
-      });
- 
-    
-  } catch(e){
-      res.status(400).json({
-        message:"Something went wrong" 
-      });
-    };
+    const bookId = req.params.book_id;
+    const result = await BookModel.deleteOne({ book_id: bookId });
+
+    res.status(200).json({
+      message: "Deleted!",
+      deletedCount: result.deletedCount,
+    });
+  } catch (e) {
+    res.status(400).json({
+      message: "Something went wrong",
+    });
+  }
 });
-
-
-
 
 export { router as booksRouter };

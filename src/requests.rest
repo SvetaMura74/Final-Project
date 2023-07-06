@@ -18,7 +18,7 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NmRjODJkYWNjNmQ5
 ###POST to add a book:
 POST http://localhost:3001/api/books
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NmRjODJkYWNjNmQ5OTRlMjgwNzAxYSIsImlhdCI6MTY4NTE4ODIzOCwiZXhwIjoxNjg3NzgwMjM4fQ.IQfv6GQYJjNlpL7d34Na7qOD_F30AU4Y3rjvQEznfgI
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NmRjODJkYWNjNmQ5OTRlMjgwNzAxYSIsImlhdCI6MTY4ODYyNjU1OCwiZXhwIjoxNjkxMjE4NTU4fQ.lw73BZlqp8hpdpkZVDvJ449DsjjVxaTA4ZY6RDA4CI0
 
 
 {
@@ -26,6 +26,25 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NmRjODJkYWNjNmQ5
    "position": "1",
     "name": "Hogghj",
     "author": "Tgg",
+    "cover":
+      "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1627068858i/58283080.jpg",
+    "rating": 4.12,
+    "description":
+      "fghjgghhjjj",
+    "genres": "Romance,Contemporary"
+
+}
+###PUT to update a book:
+PUT  http://localhost:3001/api/books/53
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NmRjODJkYWNjNmQ5OTRlMjgwNzAxYSIsImlhdCI6MTY4ODYyNjU1OCwiZXhwIjoxNjkxMjE4NTU4fQ.lw73BZlqp8hpdpkZVDvJ449DsjjVxaTA4ZY6RDA4CI0
+
+
+{
+  "book_id": "53",
+   "position": "444",
+    "name": "Hogghjddddddd",
+    "author": "Tggooooooo",
     "cover":
       "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1627068858i/58283080.jpg",
     "rating": 4.12,
@@ -89,6 +108,7 @@ GET http://localhost:3001/api/auth/
 
 ###DELETE a book:
 DELETE  http://localhost:3001/api/books/58438583
+
 
 
 
